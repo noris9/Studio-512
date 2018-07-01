@@ -5,6 +5,7 @@
 
 .body {
   font-family: Roboto, sans-serif;
+  font-family: "Gotham Pro" sans-serif;
 }
 
 .wrapper {
@@ -63,20 +64,36 @@ h6,
   top: 0;
   right: 0;
   bottom: 0;
-  background: #000;
+  background: #fff;
   z-index: 100500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #page-preloader .spinner {
-  width: 32px;
-  height: 32px;
+  width: 100%;
+  height: 100%;
   position: absolute;
-  left: 50%;
-  top: 50%;
-  background: #000;
+  left: 40%;
+  top: 0;
+  background: #f1f1f1;
   margin: -16px 0 0 -16px;
+  display: flex !important;
+  animation: 7s right ease;
 }
-
+@keyframes right {
+  10% {
+    transform: translateX(10%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
 .header {
   height: 500px;
   .wrapper {
@@ -100,11 +117,13 @@ h6,
       height: 80%;
       text-align: center;
       .header_wrapper_item_text {
-        p {
-          font-size: 24px;
-          font-weight: bold;
-          span {
-            color: #c70e0a;
+        .main {
+          .element {
+            font-size: 24px;
+            font-weight: bold;
+            span {
+              color: #c70e0a;
+            }
           }
         }
       }
@@ -112,7 +131,7 @@ h6,
     .header_wrapper_photo {
       display: flex;
       justify-content: center;
-      animation: 0.7s tremor ease-in-out infinite;
+      animation: 0.8s tremor ease-in-out infinite;
       img {
         cursor: pointer;
       }
@@ -121,10 +140,10 @@ h6,
       0%,
       25%,
       100% {
-        transform: translateY(8%);
+        transform: translateY(-4%);
       }
       50% {
-        transform: translateY(-4%);
+        transform: translateY(8%);
       }
     }
   }

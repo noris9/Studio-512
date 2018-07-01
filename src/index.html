@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style/styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="js/jquery.fullPage.min.js"></script>
+    <script src="js/typed.min.js"></script>
     <!-- <script src="js/jquery.jInvertScroll.min.js"></script> -->
 </head>
 
@@ -31,6 +32,7 @@
     <!--</div>-->
     <!--</div>-->
     <div id="page-preloader">
+        <img src="/img/slice-6.png" alt="тык">
         <span class="spinner"></span>
     </div>
     <div id="fullpage">
@@ -38,7 +40,8 @@
             <div class="wrapper">
                 <div class="header_wrapper_items">
                     <div class="header_wrapper_item_logo">
-                        <h3>Studio 512</h3>
+                        <!-- <h3>Studio 512</h3> -->
+                        <img src="/img/slice-6.png" alt="тык">
                     </div>
                     <div class="header_wrapper_item_menu">
                         <h4>Menu</h4>
@@ -46,10 +49,9 @@
                 </div>
                 <div class="header_wrapper_items_2">
                     <div class="header_wrapper_item_text">
-                        <p>Мы входим в
-                            <span>ТОП-5</span> лучших веб-студий
-                            <br> в рейтинге в CMS Magazine
-                        </p>
+                        <div class="main">
+                            <span class="element"></span>
+                        </div>
                     </div>
                 </div>
                 <div class="header_wrapper_photo">
@@ -137,11 +139,23 @@
                 scrollingSpeed: 1000
             });
 
+            // Анимация перед загрузкой сайта
             $(window).on('load', function () {
                 var $preloader = $('#page-preloader'),
                     $spinner = $preloader.find('.spinner');
                 $spinner.fadeOut();
-                $preloader.delay(350).fadeOut('slow');
+                $preloader.delay(2000).fadeOut('slow');
+            });
+
+            // Печатающийся текст
+            var typed = new Typed(".element", {
+                strings: ["Мы входим в <span>ТОП-5</span>",
+                    "Лучших веб-студий",
+                    "В рейтинге CMS Magazine",
+                    "Мы входим в <span>ТОП-5</span> лучших веб-студий<br> в рейтинге CMS Magazine"],
+                typeSpeed: 50,
+                backSpeed: 80,
+                startDelay: 4000
             });
         });
 
