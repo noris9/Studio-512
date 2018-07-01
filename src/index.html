@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Grid</title>
+    <link rel="stylesheet" href="style/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/jquery.fullPage.min.js"></script>
+    <!-- <script src="js/jquery.jInvertScroll.min.js"></script> -->
+</head>
+
+<body>
+    <!--<div class="debug">-->
+    <!--<div>-->
+    <!--<div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--<div></div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</div>-->
+    <div id="page-preloader">
+        <span class="spinner"></span>
+    </div>
+    <div id="fullpage">
+        <section class="header section" data-anchor="block1">
+            <div class="wrapper">
+                <div class="header_wrapper_items">
+                    <div class="header_wrapper_item_logo">
+                        <h3>Studio 512</h3>
+                    </div>
+                    <div class="header_wrapper_item_menu">
+                        <h4>Menu</h4>
+                    </div>
+                </div>
+                <div class="header_wrapper_items_2">
+                    <div class="header_wrapper_item_text">
+                        <p>Мы входим в
+                            <span>ТОП-5</span> лучших веб-студий
+                            <br> в рейтинге в CMS Magazine
+                        </p>
+                    </div>
+                </div>
+                <div class="header_wrapper_photo">
+                    <a href="#block2" data-menuanchor="block2">
+                        <img src="img/slice-4.png" alt="Тык">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="portfolio section" data-anchor="block2">
+            <div class="wrapper">
+                <div class="portfolio_wrapper_title">
+                    <h3>Проекты</h3>
+                </div>
+                <div class="portfolio_wrapper_button">
+                    <div class="button">Последние работы</div>
+                    <div class="button">Промышленность</div>
+                    <div class="button">Интернет-магазины</div>
+                    <div class="button">Медицина</div>
+                    <div class="button">Техническая поддержка</div>
+                </div>
+                <div class="portfolio_wrapper_items">
+                    <div class="portfolio_wrapper_item green"></div>
+                    <div class="portfolio_wrapper_item red"></div>
+                    <div class="portfolio_wrapper_item black"></div>
+                    <div class="portfolio_wrapper_item blue"></div>
+                </div>
+            </div>
+        </section>
+        <section class="contacts section" data-anchor="block3">
+            <div class="wrapper">
+                <div class="contacts_wrapper_block">
+                    <div class="contacts_wrapper_title">
+                        <h3>Давайте работать вместе</h3>
+                    </div>
+                    <div class="contacts_wrapper_items">
+                        <div class="contacts_wrapper_item">
+                            <div class="contacts_wrapper_item_number information">
+                                <p>8(843)240-98-87</p>
+                                <p>Позвонить и проконсультироваться</p>
+                                <br>
+                            </div>
+                            <div class="contacts_wrapper_item_addres information">
+                                <p>Казань, ул.Сибгата Хакима, 23</p>
+                                <p>Мы находимся по этому адресу</p>
+                                <br>
+                            </div>
+                            <div class="contacts_wrapper_item_mail information">
+                                <p>Info@ws512.ru</p>
+                                <p>Написать на почту</p>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="contacts_wrapper_item contacts_item">
+                            <input type="text" placeholder="Ваше имя">
+                            <input type="text" placeholder="Телефон">
+                            <div class="button">Заказать звонок</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="wrapper">
+                    <div class="footer_wrapper_info">
+                        <p>© Studio512. Все права защищены 2018</p>
+                    </div>
+                    <div class="footer_wrapper_social">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Блочная прокрутка 
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                anchors: ['block1', 'block2', 'block3'],
+                menu: '#menu',
+                css3: true,
+                scrollingSpeed: 1000
+            });
+
+            $(window).on('load', function () {
+                var $preloader = $('#page-preloader'),
+                    $spinner = $preloader.find('.spinner');
+                $spinner.fadeOut();
+                $preloader.delay(350).fadeOut('slow');
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
